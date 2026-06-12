@@ -32,7 +32,7 @@ CAREER_SOURCES = [
     },
     {
         "company": "Ferchau",
-        "url": "https://www.ferchau.com/de/de/karriere/jobs",
+        "url": "https://touch.ferchau.com/de/de?sortingType=actuality&sortingDirection=DESC",
     }
 ]
 
