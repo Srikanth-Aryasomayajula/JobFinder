@@ -10,16 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # IMPORTANT for pushing jobs.json
+      contents: write
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
-      - name: Install Playwright browsers
-        run: |
-        pip install playwright
-        playwright install chromium
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -27,7 +22,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install playwright
+          playwright install chromium
 
       - name: Run bot
         env:
