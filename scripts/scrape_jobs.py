@@ -2,7 +2,6 @@ import os
 import json
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
@@ -10,7 +9,8 @@ CHAT_ID = os.getenv("CHAT_ID")
 KEYWORDS = [
     "crash", "cae", "ls-dyna", "nvh",
     "festigkeit", "berechnungsingenieur",
-    "simulation", "fem", "structural", "safety"
+    "simulation", "fem", "structural", "safety",
+    "entwicklungsingenieur", "ansys", "ansa"
 ]
 
 CAREER_SOURCES = [
@@ -25,14 +25,14 @@ CAREER_SOURCES = [
     {
         "company": "Bosch",
         "url": "https://www.bosch.de/karriere/jobboerse/",
-    }
-]
-
-TEST_MODE_JOBS = [
+    },
     {
         "company": "Akkodis",
-        "title": "Berechnungsingenieur Crash",
-        "url": "https://karriere.akkodis.com/search?query=crash"
+        "url": "https://karriere.akkodis.com/search?query=crash",
+    },
+    {
+        "company": "Ferchau",
+        "url": "https://www.ferchau.com/de/de/karriere/jobs",
     }
 ]
 
@@ -44,20 +44,26 @@ except:
     seen_jobs = []
 
 seen_urls = {job["url"] for job in seen_jobs}
-
 new_jobs = []
 
 
 def send_telegram(job):
+
+    keywords_text = ", ".join(job["matched_keywords"])
+
     message = f"""
-🚀 New Job Found
+🚀 JOB FOUND
 
-Company: {job['company']}
-Title: {job['title']}
+🏢 Company: {job['company']}
+💼 Position: {job['title']}
 
-Link:
+🔍 Matched Keywords:
+{keywords_text}
+
+🔗 Link:
 {job['url']}
 """
+
     requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
         json={
@@ -69,39 +75,44 @@ Link:
 
 
 def keyword_match(text):
-    text = text.lower()
-    return any(k in text for k in KEYWORDS)
+    text_lower = text.lower()
+    return [k for k in KEYWORDS if k in text_lower]
 
 
-def scrape_generic(company, url):
+def scrape_site(company, url):
+
     try:
-        r = requests.get(url, timeout=20)
-        soup = BeautifulSoup(r.text, "lxml")
+        r = requests.get(url, timeout=20, headers={
+            "User-Agent": "Mozilla/5.0"
+        })
 
-        links = soup.find_all("a")
+        soup = BeautifulSoup(r.text, "lxml")
 
         jobs = []
 
-        for a in links:
+        for a in soup.find_all("a"):
+
             title = a.get_text(strip=True)
             href = a.get("href")
 
             if not title or not href:
                 continue
 
-            full_url = href
+            # build absolute URL
             if href.startswith("/"):
-                full_url = url.rstrip("/") + href
+                base = "/".join(url.split("/")[:3])
+                full_url = base + href
+            else:
+                full_url = href
 
-            if full_url in seen_urls:
-                continue
+            matched = keyword_match(title)
 
-            if keyword_match(title):
+            if matched:
                 jobs.append({
                     "company": company,
                     "title": title,
                     "url": full_url,
-                    "date_found": str(datetime.now())
+                    "matched_keywords": matched
                 })
 
         return jobs
@@ -111,31 +122,20 @@ def scrape_generic(company, url):
         return []
 
 
-jobs_to_process = TEST_MODE_JOBS
+# MAIN LOOP (REAL LOGIC)
+all_found_jobs = []
 
-for job in jobs_to_process:
+for source in CAREER_SOURCES:
+    jobs = scrape_site(source["company"], source["url"])
+    all_found_jobs += jobs
+
+
+for job in all_found_jobs:
 
     if job["url"] in seen_urls:
         continue
 
-    message = f"""
-🚀 New Job Found
-
-Company: {job['company']}
-Title: {job['title']}
-
-Link:
-{job['url']}
-"""
-
-    requests.post(
-        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-        json={
-            "chat_id": CHAT_ID,
-            "text": message,
-            "disable_web_page_preview": True
-        }
-    )
+    send_telegram(job)
 
     seen_urls.add(job["url"])
     new_jobs.append(job)
