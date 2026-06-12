@@ -101,21 +101,7 @@ def scrape_site(company, url):
         jobs = []
 
         # -----------------------------
-        # 1. PAGE-LEVEL CHECK (ONCE)
-        # -----------------------------
-        page_text = soup.get_text(" ", strip=True).lower()
-        matched_global = keyword_match(page_text)
-
-        if matched_global:
-            jobs.append({
-                "company": company,
-                "title": "PAGE MATCH DETECTED",
-                "url": url,
-                "matched_keywords": matched_global
-            })
-
-        # -----------------------------
-        # 2. LINK-LEVEL EXTRACTION
+        # 1. LINK-LEVEL EXTRACTION
         # -----------------------------
         for a in soup.find_all("a"):
 
@@ -164,23 +150,9 @@ def scrape_dynamic_site(company, url):
     soup = BeautifulSoup(content, "lxml")
 
     # -----------------------------
-    # 1. PAGE LEVEL (ONCE ONLY)
+    # 1. LINK LEVEL EXTRACTION
     # -----------------------------
-    page_text = soup.get_text(" ", strip=True).lower()
-    matched_global = keyword_match(page_text)
-
-    if matched_global:
-        jobs.append({
-            "company": company,
-            "title": "PAGE MATCH DETECTED",
-            "url": url,
-            "matched_keywords": matched_global
-        })
-
-    # -----------------------------
-    # 2. LINK LEVEL EXTRACTION
-    # -----------------------------
-    for a in soup.find_all("a"):
+    for a in soup.find_all(["a", "div"]):
 
         title = a.get_text(strip=True)
         href = a.get("href")
@@ -190,18 +162,22 @@ def scrape_dynamic_site(company, url):
 
         matched = keyword_match(title)
 
-        if matched:
+        if href.startswith("/"):
+            full_url = "https://karriere.akkodis.com" + href
+        else:
+            full_url = href
 
-            if href.startswith("/"):
-                base = "/".join(url.split("/")[:3])
-                href = base + href
+        if "search" in full_url:
+            continue
 
-            jobs.append({
-                "company": company,
-                "title": title,
-                "url": href,
-                "matched_keywords": matched
-            })
+        matched = keyword_match(title)
+
+        jobs.append({
+            "company": company,
+            "title": title,
+            "url": full_url,
+            "matched_keywords": matched
+        })
 
     return jobs
     
@@ -209,11 +185,13 @@ def scrape_dynamic_site(company, url):
 # MAIN LOOP (REAL LOGIC)
 all_found_jobs = []
 
+
 # STATIC
 for source in STATIC_SOURCES:
     all_found_jobs += scrape_site(source["company"], source["url"])
 
 # DYNAMIC (REAL POWER)
+
 for source in DYNAMIC_SOURCES:
     all_found_jobs += scrape_dynamic_site(source["company"], source["url"])
 
