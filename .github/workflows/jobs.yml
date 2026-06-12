@@ -1,32 +1,36 @@
-name: Job Finder
+name: Job Finder Bot
 
 on:
+  schedule:
+    - cron: "0 * * * *"   # every hour
   workflow_dispatch:
 
-  schedule:
-    - cron: '0 * * * *'
-
 jobs:
-  search:
+  run-bot:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Install Packages
-        run: |
-          pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run Bot
+      - name: Run bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python scripts/scrape_jobs.py
+
+      - name: Commit updated jobs.json
         run: |
-          python scripts/scrape_jobs.py
+          git config --global user.email "bot@github.com"
+          git config --global user.name "job-bot"
+          git add jobs.json
+          git commit -m "update jobs" || echo "no changes"
+          git push
