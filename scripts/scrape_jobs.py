@@ -114,7 +114,8 @@ def scrape_site(company, url):
                     "url": full_url,
                     "matched_keywords": matched
                 })
-
+        print(r.text[:1000])
+        
         return jobs
 
     except Exception as e:
@@ -129,6 +130,7 @@ for source in CAREER_SOURCES:
     jobs = scrape_site(source["company"], source["url"])
     all_found_jobs += jobs
 
+print("Jobs found:", len(all_found_jobs))
 
 for job in all_found_jobs:
 
