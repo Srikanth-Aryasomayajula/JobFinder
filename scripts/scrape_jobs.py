@@ -2,6 +2,7 @@ import os
 import json
 import requests
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
@@ -13,7 +14,7 @@ KEYWORDS = [
     "entwicklungsingenieur", "ansys", "ansa"
 ]
 
-CAREER_SOURCES = [
+STATIC_SOURCES = [
     {
         "company": "Mercedes-Benz",
         "url": "https://jobs.mercedes-benz.com/search",
@@ -25,15 +26,18 @@ CAREER_SOURCES = [
     {
         "company": "Bosch",
         "url": "https://www.bosch.de/karriere/jobboerse/",
-    },
-    {
-        "company": "Akkodis",
-        "url": "https://karriere.akkodis.com/search?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
-    },
-    {
-        "company": "Ferchau",
-        "url": "https://touch.ferchau.com/de/de?sortingType=actuality&sortingDirection=DESC",
     }
+]
+
+DYNAMIC_SOURCES = [
+    {
+            "company": "Akkodis",
+            "url": "https://karriere.akkodis.com/search?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+        },
+        {
+            "company": "Ferchau",
+            "url": "https://touch.ferchau.com/de/de?sortingType=actuality&sortingDirection=DESC",
+        }
 ]
 
 # Load existing jobs (avoid duplicates)
@@ -122,13 +126,56 @@ def scrape_site(company, url):
         print(f"Error scraping {company}: {e}")
         return []
 
+def scrape_dynamic_site(company, url):
 
+    jobs = []
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+
+        page.goto(url, timeout=60000)
+        page.wait_for_timeout(5000)  # wait JS load
+
+        content = page.content()
+        browser.close()
+
+    soup = BeautifulSoup(content, "lxml")
+
+    for a in soup.find_all("a"):
+        title = a.get_text(strip=True)
+        href = a.get("href")
+
+        if not title or not href:
+            continue
+
+        matched = keyword_match(title)
+
+        if matched:
+            if href.startswith("/"):
+                base = "/".join(url.split("/")[:3])
+                href = base + href
+
+            jobs.append({
+                "company": company,
+                "title": title,
+                "url": href,
+                "matched_keywords": matched
+            })
+
+    return jobs
+    
+    
 # MAIN LOOP (REAL LOGIC)
 all_found_jobs = []
 
-for source in CAREER_SOURCES:
-    jobs = scrape_site(source["company"], source["url"])
-    all_found_jobs += jobs
+# STATIC
+for source in STATIC_SOURCES:
+    all_found_jobs += scrape_site(source["company"], source["url"])
+
+# DYNAMIC (REAL POWER)
+for source in DYNAMIC_SOURCES:
+    all_found_jobs += scrape_dynamic_site(source["company"], source["url"])
 
 print("Jobs found:", len(all_found_jobs))
 
