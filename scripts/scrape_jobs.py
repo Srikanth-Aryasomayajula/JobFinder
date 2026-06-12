@@ -28,7 +28,7 @@ CAREER_SOURCES = [
     },
     {
         "company": "Akkodis",
-        "url": "https://karriere.akkodis.com/search?query=crash",
+        "url": "https://karriere.akkodis.com/search?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
     },
     {
         "company": "Ferchau",
