@@ -1,1 +1,370 @@
-[]
+[
+  {
+    "company": "Akkodis",
+    "title": "Leitfaden f\u00fcr barrierefreie Bildschirmleseger\u00e4te, Feedback und Fehlerberichte | Neues Fenster",
+    "url": "https://accessibe.com/blog/knowledgebase/screen-reader-guide",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Zur\u00fcck zu Akkodis Global",
+    "url": "https://www.akkodis.com/en/careers/job-results?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Matching starten",
+    "url": "https://karriere.akkodis.com/survey/3?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Initiativbewerbung",
+    "url": "https://akkodis4.my.salesforce-sites.com/spontenaousapp?lang=de&country=de&utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Jobs in \u00d6sterreich",
+    "url": "https://www.akkodis.com/de-at/karriere/jobsuche?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "3D\u2011Konstrukteur (m/w/d) Infrastruktur- und AnlagenbauDresdenKonstruktion & DesignVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA0MjAyNi03NjQ4Mg==&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Account Manager (m/w/d) (m/w/d)K\u00f6lnZentralfunktionenVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=MjAyNS0zNDc3MQ%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Account Manager (m/w/d) (m/w/d)BremenZentralfunktionenVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=MjAyNS0zNDY0NQ%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Accounting & Controlling Specialist (m/w/d)WiedemarSupply Chain, Logistik & TransportVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA1MjAyNi03NzAyNA%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Administrative SupportM\u00fcnchenSonstigesVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA2MjAyNi03ODEwNg==&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Administrator ERP\u2011Systeme (m/w/d)Neustadt an der AischIT-Infrastruktur, Support & SecurityVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA0MjAyNi03NjAzNQ==&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Administrator (m/w/d) 2nd LevelRothIT-Infrastruktur, Support & SecurityVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTAyMjAyNi03NDM4OA%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Administrator (m/w/d) Netzwerk & SecurityN\u00fcrnbergIT-Infrastruktur, Support & SecurityVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA2MjAyNS02MTUwMw%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Aerospace Product Safety Engineer (m/w/d)Donauw\u00f6rth, M\u00fcnchen, Ingolstadt+ 2 weitereForschung & EntwicklungVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTA2MjAyNS02MTY3MA%3D%3D&showApplicationForm=false",
+    "matched_keywords": [
+      "safety"
+    ]
+  },
+  {
+    "company": "Akkodis",
+    "title": "Agrar Ingenieur (m/w/d)DortmundElektronik & ElektrotechnikVollzeit",
+    "url": "https://karriere.akkodis.com/offer-redirect/?offerApiId=Sk4gLTAzMjAyNi03NTU1Nw%3D%3D&showApplicationForm=false",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Impressum",
+    "url": "https://karriere.akkodis.com/impressum?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Datenschutz",
+    "url": "https://www.talentsconnect-ag.de/docs/datenschutzerklaerung?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Cookie Policy",
+    "url": "https://www.akkodis.com/en/cookies-policy/",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Privacy Policy",
+    "url": "https://www.akkodis.com/en/privacy-policy",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "Terms of Use",
+    "url": "https://www.akkodis.com/en/terms-of-use",
+    "matched_keywords": []
+  },
+  {
+    "company": "Akkodis",
+    "title": "More information",
+    "url": "https://www.akkodis.com/cookies-policy",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Agile Coach Scrum/SAFe (m/w/d)NeuJobHybridVollzeit90.000 - 105.000 \u20acM\u00fcnchen, Deut\u00adsch\u00adlandBackofficeProfessionalsSenior Professionalsohne PersonalverantwortungCoachingF\u00f6rde\u00adrungInfor\u00admatikJiraKommu\u00adni\u00adka\u00adtionOpti\u00admie\u00adrungPlanungSAPScrum",
+    "url": "https://karriere.akkodis.com/de/de/job/508588/agile-coach-scrum-safe",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Projek\u00adt\u00adin\u00adge\u00adnieur Sieb\u00addruck/Solar (m/w/d)NeuJobVor OrtVollzeit60.000 - 70.000 \u20acKahl am Main, Deut\u00adsch\u00adlandBackofficeProfessionalsSenior Professionalsohne PersonalverantwortungAnalyseAuswer\u00adtungBewer\u00adtungDoku\u00admen\u00adta\u00adtionEntwick\u00adlungImple\u00admen\u00adtie\u00adrungInte\u00adgra\u00adtionMSOpti\u00admie\u00adrungPr\u00fcfungRepor\u00adtingSAPSieb\u00addruck",
+    "url": "https://karriere.akkodis.com/de/de/job/508585/projektingenieur-siebdruck-solar",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "SAP MM/SD Support & Prozes\u00ads\u00adop\u00adti\u00admie\u00adrung mit Exper\u00adtise in der Ener\u00adgie\u00adwirt\u00adschaftNeuProjektRemoteab sofortKeine AngabeKarls\u00adruhe, Deut\u00adsch\u00adlandBackofficeAnalyseBera\u00adtungBeschaf\u00adfungCusto\u00admi\u00adzingDoku\u00admen\u00adta\u00adtionEinkaufFIKoor\u00addi\u00adna\u00adtionProzes\u00ads\u00adop\u00adti\u00admie\u00adrungSAPSAP MMSDServiceUmset\u00adzungVertrieb",
+    "url": "https://karriere.akkodis.com/de/de/projekt/508435/sap-mm-sd-support-prozessoptimierung-mit-expertise-in-der-energiewirtschaft",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Betriebs\u00adleiter Chemi\u00adsche Indus\u00adtrie (m/w/d)NeuJobVor OrtVollzeit90.000 - 110.000 \u20acWies\u00adbaden, Deut\u00adsch\u00adlandPharma und LifescienceWeitereProfessionalsSenior Professionalsmit PersonalverantwortungAnwen\u00addungenArbeits\u00adsi\u00adcher\u00adheitBestands\u00adma\u00adna\u00adge\u00admentChemieControl\u00adlingERPEntwick\u00adlungF\u00fchrungKoor\u00addi\u00adna\u00adtionMSOpti\u00admie\u00adrungPerso\u00adnal\u00adent\u00adwick\u00adlungPlanungProduk\u00adti\u00adons\u00adpla\u00adnung+8",
+    "url": "https://karriere.akkodis.com/de/de/job/508582/betriebsleiter-chemische-industrie",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Inbe\u00adtrieb\u00adnehmer Sonder\u00adan\u00adla\u00adgenbau (m/w/d)NeuJobVor OrtVollzeit50.000 - 60.000 \u20acKahl am Main, Deut\u00adsch\u00adlandAnlagenbauMaschinenbauYoung ProfessionalsProfessionalsohne PersonalverantwortungAnlagenDGUVElek\u00adtro\u00adfach\u00adkraftElek\u00adtro\u00adtechnikFehler\u00adana\u00adlyseFehler\u00adbe\u00adhe\u00adbungInbe\u00adtrieb\u00adnahmeMSMaschi\u00adnenbauMecha\u00adtronikOpti\u00admie\u00adrungSAP",
+    "url": "https://karriere.akkodis.com/de/de/job/508579/inbetriebnehmer-sonderanlagenbau",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "IT-Service\u00adtech\u00adniker (m/w/d)NeuJobHybridVollzeit55.000 - 60.000 \u20acM\u00fcnchen, Deut\u00adsch\u00adlandInformationstechnikProfessionalsohne PersonalverantwortungAnalyseArbeits\u00adweiseEnga\u00adge\u00admentITKommu\u00adni\u00adka\u00adtionManage\u00admentMicro\u00adsoft OfficeNetz\u00adwerk\u00adtechnikServiceSoft\u00adwa\u00adre\u00adver\u00adtei\u00adlungSyste\u00adm\u00adin\u00adte\u00adgra\u00adtionWindowsZuver\u00adl\u00e4s\u00adsig\u00adkeit",
+    "url": "https://karriere.akkodis.com/de/de/job/508576/it-servicetechniker",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Projekt\u00adma\u00adnager (m/w/d)NeuJobVor OrtVollzeit60.000 - 80.000 \u20acFrie\u00adde\u00adburg, Deut\u00adsch\u00adlandAnlagenbauMaschinenbauWeitereProfessionalsSenior Professionalsohne PersonalverantwortungAnalyseArbeits\u00adweiseCADKVPKoor\u00addi\u00adna\u00adtionLeanMSOpti\u00admie\u00adrungPlanungProjekt\u00adma\u00adna\u00adge\u00admentQualit\u00e4tRotor\u00adbl\u00e4tterSoft\u00adwareSteu\u00ade\u00adrung+2",
+    "url": "https://karriere.akkodis.com/de/de/job/508573/projektmanager",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "St\u00fcck\u00adlis\u00adten\u00adko\u00ador\u00addi\u00adnator Maschi\u00adnenbau (m/w/d)NeuJobHybridVollzeit55.000 - 65.000 \u20acG\u00fctersloh, Deut\u00adsch\u00adlandFahrzeugtechnikMaschinenbauProfessionalsohne PersonalverantwortungCADDaten\u00adpflegeEntwick\u00adlungKonstruk\u00adtionKoor\u00addi\u00adna\u00adtionManage\u00admentMaschi\u00adnenbauPDMSAPSoft\u00adwareTeam\u00adcenterTermin\u00adver\u00adfol\u00adgung",
+    "url": "https://karriere.akkodis.com/de/de/job/508570/stuecklistenkoordinator-maschinenbau",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Projekt\u00adleiter Elek\u00adtro\u00adtechnik (m/w/d)NeuJobHybridTeilzeit50.000 - 70.000 \u20acN\u00fcrn\u00adberg, Deut\u00adsch\u00adlandBackofficeProfessionalsmit PersonalverantwortungAnlagenAnla\u00adgenbauAutoCADAuto\u00adma\u00adti\u00adsie\u00adrungs\u00adtechnikDesignEPLANElek\u00adtro\u00adtechnikEntwick\u00adlungF\u00fchrungIECInbe\u00adtrieb\u00adnahmeInte\u00adgra\u00adtionMSMontage+7",
+    "url": "https://karriere.akkodis.com/de/de/job/508567/projektleiter-elektrotechnik",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "(Junior) Talent Acqui\u00adsi\u00adtion Specia\u00adlist (m/w/d)NeuJobHybridVollzeit40.000 - 50.000 \u20acHeil\u00adbronn, Deut\u00adsch\u00adlandPersonalYoung ProfessionalsProfessionalsohne PersonalverantwortungArbeits\u00adweiseDaten\u00adbankDynamikFlexi\u00adbi\u00adlit\u00e4tMediaPerso\u00adnal\u00adma\u00adna\u00adge\u00admentPlanungRecrui\u00adting",
+    "url": "https://karriere.akkodis.com/de/de/job/508561/junior-talent-acquisition-specialist",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Netz\u00adwerk\u00adad\u00admi\u00adnis\u00adtrator Rechen\u00adzen\u00adtrum & IT-Infra\u00ads\u00adtruktur (m/w/d)NeuJobHybridVollzeit60.000 - 70.000 \u20acLehrte, Deut\u00adsch\u00adlandInformationstechnikProfessionalsSenior Professionalsohne PersonalverantwortungDesignDoku\u00admen\u00adta\u00adtionFire\u00adwallITIT-Infra\u00ads\u00adtrukturLANPlanungSwit\u00adchesSyste\u00adm\u00adin\u00adte\u00adgra\u00adtionTrou\u00adbles\u00adhoo\u00adtingVMwareVPNVirtu\u00ada\u00adli\u00adsie\u00adrungVoIP+2",
+    "url": "https://karriere.akkodis.com/de/de/job/508564/netzwerkadministrator-rechenzentrum-it-infrastruktur",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Next Level Engi\u00adnee\u00adring: FERCHAU Bochum sucht dich (m/w/d) f\u00fcrs M\u00fcns\u00adter\u00adlandJobVor OrtVollzeit30.000 - 85.000 \u20acM\u00fcnster, Deut\u00adsch\u00adlandAnlagenbauElektrotechnikMaschinenbauYoung ProfessionalsProfessionalsohne PersonalverantwortungArbeits\u00adweiseDigi\u00adta\u00adli\u00adsie\u00adrungElek\u00adtro\u00adtechnikEntwick\u00adlungITKonstruk\u00adtionProdukt\u00adma\u00adna\u00adge\u00admentProjekt\u00adma\u00adna\u00adge\u00admentProzes\u00ads\u00adop\u00adti\u00admie\u00adrungSoft\u00adwa\u00adre\u00adent\u00adwick\u00adlungTeam\u00adf\u00e4\u00adhig\u00adkeitTech\u00adni\u00adscher VertriebVertrieb",
+    "url": "https://karriere.akkodis.com/de/de/job/508033/next-level-engineering-ferchau-bochum-sucht-dich-fuers-muensterland",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Proto\u00adty\u00adpen\u00adbe\u00adschaf\u00adfung und Liefe\u00adran\u00adten\u00adma\u00adna\u00adge\u00admentNeuProjektRemote01.07.20266 MonateKarls\u00adruhe, Deut\u00adsch\u00adlandFahrzeugtechnikInformationstechnikMaschinenbauAuswer\u00adtungBewer\u00adtungDoku\u00admen\u00adta\u00adtionERPEinkaufExcelFerti\u00adgungLiefe\u00adran\u00adten\u00adma\u00adna\u00adge\u00admentMSMS ExcelSAPSteu\u00ade\u00adrungTrackingZerspa\u00adnung",
+    "url": "https://karriere.akkodis.com/de/de/projekt/508558/prototypenbeschaffung-und-lieferantenmanagement",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "DevOps Engi\u00adneer (m/w/d)NeuJobVor OrtVollzeit65.000 - 75.000 \u20acDeggen\u00addorf, Deut\u00adsch\u00adlandInformationstechnikProfessionalsSenior Professionalsohne PersonalverantwortungAnwen\u00addungenAuto\u00adma\u00adti\u00adsie\u00adrungBera\u00adtungCC++CI/CDDevOpsEntwick\u00adlungEntwick\u00adlungs\u00adum\u00adge\u00adbungenGitITInfor\u00admatikInfor\u00adma\u00adti\u00adons\u00adtechnikJenkins+10",
+    "url": "https://karriere.akkodis.com/de/de/job/508555/devops-engineer",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Elek\u00adtro\u00adniker f\u00fcr den Schalt\u00adschrankbau (m/w/d)NeuJobVor OrtVollzeit30.000 - 42.000 \u20acWarstein, Deut\u00adsch\u00adlandElektrotechnikYoung ProfessionalsProfessionalsohne PersonalverantwortungAnlagenPr\u00fcfungSchalt\u00adschrankbau",
+    "url": "https://karriere.akkodis.com/de/de/job/508549/elektroniker-fuer-den-schaltschrankbau",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Bauin\u00adge\u00adnieur Indus\u00adtriebau (m/w/d)NeuJobVor OrtVollzeit60.000 - 70.000 \u20acLingen, Deut\u00adsch\u00adlandAnlagenbauWeitereYoung ProfessionalsProfessionalsohne PersonalverantwortungAllplanAutoCADBaustatikBeh\u00f6rdenCADEntwick\u00adlungIndus\u00adtriebauKoor\u00addi\u00adna\u00adtionPlanungRevitSoft\u00adwareStahl",
+    "url": "https://karriere.akkodis.com/de/de/job/508546/bauingenieur-industriebau",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Sach\u00adbe\u00ada\u00adr\u00adbeiter (m/w/d) Dispo\u00adsi\u00adtion / Instand\u00adset\u00adzungs\u00adsteu\u00ade\u00adrung (m/w/d)NeuJobHybridVollzeit45.000 - 55.000 \u20acBonn, Deut\u00adsch\u00adlandBackofficeYoung ProfessionalsProfessionalsohne Personalverantwortung5SAnwen\u00addungenDispo\u00adsi\u00adtionERPElek\u00adtronikExcelKanbanKoor\u00addi\u00adna\u00adtionLeanMSManage\u00admentNavi\u00adsionProduk\u00adti\u00adons\u00adpla\u00adnungSAP",
+    "url": "https://karriere.akkodis.com/de/de/job/508543/sachbearbeiter-disposition-instandsetzungssteuerung",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "IT Busi\u00adness Analyst (m/w/d), in Direkt\u00adve\u00admitt\u00adlungNeuJobHybridVollzeit85.000 - 95.000 \u20acStutt\u00adgart, Deut\u00adsch\u00adlandInformationstechnikSenior Professionalsohne PersonalverantwortungAnalyseConflu\u00adenceDigi\u00adta\u00adli\u00adsie\u00adrungDoku\u00admen\u00adta\u00adtionITInfor\u00admatikJiraOpti\u00admie\u00adrungProduct OwnerQuali\u00adt\u00e4ts\u00adsi\u00adche\u00adrungScrumUmset\u00adzungUser StoriesWirt\u00adschafts\u00adin\u00adfor\u00admatik",
+    "url": "https://karriere.akkodis.com/de/de/job/508540/it-business-analyst-in-direktvemittlung",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Inge\u00adnieur Elek\u00adtro\u00adtechnik (m/w/d)JobHybridVollzeit50.000 - 65.000 \u20acOlden\u00adburg, Deut\u00adsch\u00adlandAnlagenbauElektrotechnikWeitereYoung ProfessionalsProfessionalsohne PersonalverantwortungAusle\u00adgungCADERPElek\u00adtro\u00adtechnikMSNXPlanungSAPSchiffbauSchiffs\u00adtechnikSiemens NXSyste\u00adm\u00adin\u00adte\u00adgra\u00adtion",
+    "url": "https://karriere.akkodis.com/de/de/job/484462/ingenieur-elektrotechnik",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Werk\u00adstu\u00addent Vertrieb B2B (m/w/d)JobVor OrtTeilzeit13.000 - 16.000 \u20acMann\u00adheim, Deut\u00adsch\u00adlandVertriebStudentsohne PersonalverantwortungArbeits\u00adweiseCRMDigi\u00adta\u00adli\u00adsie\u00adrungDoku\u00admen\u00adta\u00adtionExcelMSSales\u00adforceVertrieb",
+    "url": "https://karriere.akkodis.com/de/de/job/477196/werkstudent-vertrieb-b2b",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Zerspa\u00adnungs\u00adme\u00adcha\u00adniker (m/w/d) Fr\u00e4s\u00adtechnikNeuJobVor OrtVollzeit40.000 - 45.000 \u20acObern\u00addorf am Neckar, Deut\u00adsch\u00adlandMaschinenbauYoung ProfessionalsProfessionalsohne PersonalverantwortungArbeits\u00adweiseCNCHeiden\u00adhainISOISO 9001Indus\u00adtrie\u00adme\u00adcha\u00adnikerOpti\u00admie\u00adrungProduk\u00adtionProgram\u00admie\u00adrungQuali\u00adt\u00e4ts\u00adsi\u00adche\u00adrung",
+    "url": "https://karriere.akkodis.com/de/de/job/508537/zerspanungsmechaniker-fraestechnik",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Vertriebs\u00adin\u00adge\u00adnieur/Account Manager (m/w/d)JobVor OrtVollzeit50.000 - 85.000 \u20acMann\u00adheim, Deut\u00adsch\u00adlandVertriebProfessionalsSenior Professionalsohne PersonalverantwortungAkquiseArbeits\u00adweiseITKoor\u00addi\u00adna\u00adtionPharmaPr\u00e4sen\u00adta\u00adtionRecrui\u00adtingSelbst\u00adst\u00e4n\u00addige Arbeits\u00adweiseUmset\u00adzung",
+    "url": "https://karriere.akkodis.com/de/de/job/467683/vertriebsingenieur-account-manager",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Data & Docu\u00admen\u00adta\u00adtion Manage\u00adment Advisor (m/w/d)NeuJobHybridVollzeit80.000 - 100.000 \u20acBayreuth, Deut\u00adsch\u00adlandGreen Jobs & ProjectsWeitereProfessionalsohne PersonalverantwortungAnalyseDaten\u00admi\u00adgra\u00adtionDevOpsDigi\u00adta\u00adli\u00adsie\u00adrungETLGISGeomatikITImple\u00admen\u00adtie\u00adrungManage\u00admentOpti\u00admie\u00adrungProjekt\u00adma\u00adna\u00adge\u00admentSoft\u00adwareUmset\u00adzung",
+    "url": "https://karriere.akkodis.com/de/de/job/508534/data-documentation-management-advisor",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Soft\u00adware Devel\u00adoper C++ (m/w/d)JobVor OrtVollzeit50.000 - 70.000 \u20acKramsach, \u00d6ster\u00adreichInformationstechnikWeitereProfessionalsSenior Professionalsohne PersonalverantwortungAuto\u00adma\u00adti\u00adsie\u00adrungs\u00adtechnikCC#C++Doku\u00admen\u00adta\u00adtionEntwick\u00adlungMecha\u00adtronikProgram\u00admie\u00adrungSoft\u00adwareSoft\u00adwa\u00adre\u00adent\u00adwick\u00adlungSyste\u00adm\u00adin\u00adte\u00adgra\u00adtionTestingUmset\u00adzung",
+    "url": "https://karriere.akkodis.com/de/de/job/453817/software-developer-c",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Deutschland",
+    "url": "https://recruiting.ferchau.com/de/de",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Frankreich",
+    "url": "https://recruiting.ferchau.com/fr/fr",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Spanien",
+    "url": "https://recruiting.ferchau.com/es/en",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "\u00d6sterreich",
+    "url": "https://recruiting.ferchau.com/at/de",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Polen",
+    "url": "https://recruiting.ferchau.com/pl/en",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Automotive",
+    "url": "https://recruiting.ferchau.com/automotive/de",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Aerospace & Defence",
+    "url": "https://recruiting.ferchau.com/aviation/de",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Interne Karriere",
+    "url": "https://recruiting.ferchau.com/fem/de",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Jetzt mehr erfahren",
+    "url": "https://www.ferchau.com/go/60",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Nutzungsbedingungen",
+    "url": "https://www.ferchau.com/go/ferchau-touch-nutzungsbedingungen",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "AGB",
+    "url": "https://www.ferchau.com/go/agb",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "AEB",
+    "url": "https://www.ferchau.com/go/einkaufsbedingungen",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Downloads",
+    "url": "https://www.ferchau.com/go/downloads",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Datenschutz",
+    "url": "https://www.ferchau.com/go/datenschutz",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Impressum",
+    "url": "https://www.ferchau.com/go/impressum",
+    "matched_keywords": []
+  },
+  {
+    "company": "Ferchau",
+    "title": "Rechtliches",
+    "url": "https://www.ferchau.com/go/rechtliches",
+    "matched_keywords": []
+  }
+]
