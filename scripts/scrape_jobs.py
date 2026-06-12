@@ -28,6 +28,14 @@ CAREER_SOURCES = [
     }
 ]
 
+TEST_MODE_JOBS = [
+    {
+        "company": "Akkodis",
+        "title": "Berechnungsingenieur Crash",
+        "url": "https://karriere.akkodis.com/search?query=crash"
+    }
+]
+
 # Load existing jobs (avoid duplicates)
 try:
     with open("jobs.json", "r") as f:
@@ -103,14 +111,34 @@ def scrape_generic(company, url):
         return []
 
 
-for source in CAREER_SOURCES:
-    jobs = scrape_generic(source["company"], source["url"])
+jobs_to_process = TEST_MODE_JOBS
 
-    for job in jobs:
-        send_telegram(job)
-        new_jobs.append(job)
+for job in jobs_to_process:
 
-        seen_urls.add(job["url"])
+    if job["url"] in seen_urls:
+        continue
+
+    message = f"""
+🚀 New Job Found
+
+Company: {job['company']}
+Title: {job['title']}
+
+Link:
+{job['url']}
+"""
+
+    requests.post(
+        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+        json={
+            "chat_id": CHAT_ID,
+            "text": message,
+            "disable_web_page_preview": True
+        }
+    )
+
+    seen_urls.add(job["url"])
+    new_jobs.append(job)
 
 
 # Save updated job list
