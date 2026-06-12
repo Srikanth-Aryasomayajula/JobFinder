@@ -80,7 +80,13 @@ def send_telegram(job):
 
 def keyword_match(text):
     text_lower = text.lower()
-    return [k for k in KEYWORDS if k in text_lower]
+    matched = []
+
+    for k in KEYWORDS:
+        if k in text_lower:
+            matched.append(k)
+
+    return matched
 
 
 def scrape_site(company, url):
@@ -94,6 +100,23 @@ def scrape_site(company, url):
 
         jobs = []
 
+        # -----------------------------
+        # 1. PAGE-LEVEL CHECK (ONCE)
+        # -----------------------------
+        page_text = soup.get_text(" ", strip=True).lower()
+        matched_global = keyword_match(page_text)
+
+        if matched_global:
+            jobs.append({
+                "company": company,
+                "title": "PAGE MATCH DETECTED",
+                "url": url,
+                "matched_keywords": matched_global
+            })
+
+        # -----------------------------
+        # 2. LINK-LEVEL EXTRACTION
+        # -----------------------------
         for a in soup.find_all("a"):
 
             title = a.get_text(strip=True)
@@ -102,7 +125,6 @@ def scrape_site(company, url):
             if not title or not href:
                 continue
 
-            # build absolute URL
             if href.startswith("/"):
                 base = "/".join(url.split("/")[:3])
                 full_url = base + href
@@ -118,8 +140,7 @@ def scrape_site(company, url):
                     "url": full_url,
                     "matched_keywords": matched
                 })
-        print(r.text[:1000])
-        
+
         return jobs
 
     except Exception as e:
@@ -135,14 +156,32 @@ def scrape_dynamic_site(company, url):
         page = browser.new_page()
 
         page.goto(url, timeout=60000)
-        page.wait_for_timeout(5000)  # wait JS load
+        page.wait_for_timeout(8000)
 
         content = page.content()
         browser.close()
 
     soup = BeautifulSoup(content, "lxml")
 
+    # -----------------------------
+    # 1. PAGE LEVEL (ONCE ONLY)
+    # -----------------------------
+    page_text = soup.get_text(" ", strip=True).lower()
+    matched_global = keyword_match(page_text)
+
+    if matched_global:
+        jobs.append({
+            "company": company,
+            "title": "PAGE MATCH DETECTED",
+            "url": url,
+            "matched_keywords": matched_global
+        })
+
+    # -----------------------------
+    # 2. LINK LEVEL EXTRACTION
+    # -----------------------------
     for a in soup.find_all("a"):
+
         title = a.get_text(strip=True)
         href = a.get("href")
 
@@ -152,6 +191,7 @@ def scrape_dynamic_site(company, url):
         matched = keyword_match(title)
 
         if matched:
+
             if href.startswith("/"):
                 base = "/".join(url.split("/")[:3])
                 href = base + href
