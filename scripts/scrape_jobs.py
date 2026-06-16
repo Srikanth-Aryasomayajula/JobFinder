@@ -22,11 +22,11 @@ STATIC_SOURCES = [
     {
         "company": "Porsche",
         "url": "https://jobs.porsche.com/",
-    },
-    {
+    }
+    '''{
         "company": "Bosch",
         "url": "https://www.bosch.de/karriere/jobboerse/",
-    }
+    }'''
 ]
 
 DYNAMIC_SOURCES = [
@@ -88,49 +88,54 @@ def keyword_match(text):
 
     return matched
 
-def scrape_search_site(company, base_url, keyword):
+def scrape_search_site(company, base_url, keywords):
 
     jobs = []
 
-    url = base_url.replace("{keyword}", keyword)
+    for keyword in keywords:
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
+        url = base_url.replace("{keyword}", keyword)
 
-        page.goto(url, timeout=60000)
-        page.wait_for_timeout(5000)
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
 
-        content = page.content()
-        browser.close()
+            page.goto(url, timeout=60000)
+            page.wait_for_timeout(5000)
 
-    soup = BeautifulSoup(content, "lxml")
+            content = page.content()
+            browser.close()
 
-    # extract job cards (generic)
-    for a in soup.find_all("a"):
+        soup = BeautifulSoup(content, "lxml")
 
-        title = a.get_text(strip=True)
-        href = a.get("href")
+        for a in soup.find_all("a"):
 
-        if not title or not href:
-            continue
+            title = a.get_text(strip=True)
+            href = a.get("href")
 
-        if href.startswith("/"):
-            base = "/".join(url.split("/")[:3])
-            full_url = base + href
-        else:
-            full_url = href
+            if not title or not href:
+                continue
 
-        # IMPORTANT: ensure real job pages only
-        if "search" in full_url:
-            continue
+            if href.startswith("/"):
+                base = "/".join(url.split("/")[:3])
+                full_url = base + href
+            else:
+                full_url = href
 
-        jobs.append({
-            "company": company,
-            "title": title,
-            "url": full_url,
-            "matched_keywords": [keyword]
-        })
+            if "search" in full_url:
+                continue
+
+            matched = keyword_match(title)
+
+            if not matched:
+                continue
+
+            jobs.append({
+                "company": company,
+                "title": title,
+                "url": full_url,
+                "matched_keywords": matched
+            })
 
     return jobs
     
@@ -197,7 +202,7 @@ def scrape_dynamic_site(company, url):
     # -----------------------------
     # 1. LINK LEVEL EXTRACTION
     # -----------------------------
-    for a in soup.find_all(["a", "div"]):
+    for a in soup.find_all("a"):
 
         title = a.get_text(strip=True)
         href = a.get("href")
@@ -205,23 +210,35 @@ def scrape_dynamic_site(company, url):
         if not title or not href:
             continue
 
-        # matched = keyword_match(title)
-        
-
         if href.startswith("/"):
             base = "/".join(url.split("/")[:3])
             full_url = base + href
         else:
             full_url = href
 
-        if "search" in full_url:
+        url_lower = full_url.lower()
+
+        # ❌ remove non-job pages
+        bad_patterns = ["/go/", "impressum", "datenschutz", "agb", "rechtliches",
+            "downloads", "nutzungsbedingungen", "deutschland", "frankreich","spanien", "österreich", "polen", "automotive", "aerospace", "interne karriere",  "impressum", "datenschutz", "downloads", "agb", "aeb", "rechtliches", "nutzungsbedingungen"]
+
+        if any(b in url_lower for b in bad_patterns):
             continue
 
-        # matched = keyword_match(title)
+        # ❌ only for Ferchau 
+        if (
+            "recruiting.ferchau.com" not in full_url
+            and "/job/" not in full_url
+        ):
+            continue
+
+        # 🔥 better keyword detection (page-level)
+        page_text = soup.get_text(" ", strip=True).lower()
+        matched = keyword_match(page_text)
 
         if not matched:
             continue
-            
+
         jobs.append({
             "company": company,
             "title": title,
@@ -233,6 +250,21 @@ def scrape_dynamic_site(company, url):
     
     return jobs
     
+def merge_jobs(jobs):
+
+    merged = {}
+
+    for j in jobs:
+        key = j["url"]
+
+        if key not in merged:
+            merged[key] = j
+        else:
+            merged[key]["matched_keywords"] = list(
+                set(merged[key]["matched_keywords"] + j["matched_keywords"])
+            )
+
+    return list(merged.values())
     
 # MAIN LOOP (REAL LOGIC)
 all_found_jobs = []
@@ -244,20 +276,19 @@ for source in STATIC_SOURCES:
 
 # DYNAMIC (REAL POWER)
 
-KEYWORDS_TO_SEARCH = KEYWORDS  # reuse your existing list
-
 for source in DYNAMIC_SOURCES:
-    for keyword in KEYWORDS_TO_SEARCH:
 
-        jobs = scrape_search_site(
-            source["company"],
-            source["search_url"],
-            keyword
-        )
+    jobs = scrape_search_site(
+        source["company"],
+        source["search_url"],
+        keyword
+    )
 
-        all_found_jobs += jobs
+    all_found_jobs += jobs
 
 print("Jobs found:", len(all_found_jobs))
+
+all_found_jobs = merge_jobs(all_found_jobs)
 
 for job in all_found_jobs:
 
