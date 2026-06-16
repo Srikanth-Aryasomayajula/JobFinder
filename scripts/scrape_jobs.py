@@ -160,10 +160,12 @@ def scrape_dynamic_site(company, url):
         if not title or not href:
             continue
 
-        matched = keyword_match(title)
+        # matched = keyword_match(title)
+        
 
         if href.startswith("/"):
-            full_url = "https://karriere.akkodis.com" + href
+            base = "/".join(url.split("/")[:3])
+            full_url = base + href
         else:
             full_url = href
 
@@ -172,6 +174,9 @@ def scrape_dynamic_site(company, url):
 
         matched = keyword_match(title)
 
+        if not matched:
+            continue
+            
         jobs.append({
             "company": company,
             "title": title,
@@ -179,6 +184,8 @@ def scrape_dynamic_site(company, url):
             "matched_keywords": matched
         })
 
+    print(company, title, matched)
+    
     return jobs
     
     
