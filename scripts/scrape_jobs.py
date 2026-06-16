@@ -31,13 +31,13 @@ STATIC_SOURCES = [
 
 DYNAMIC_SOURCES = [
     {
-            "company": "Akkodis",
-            "url": "https://karriere.akkodis.com/search?utm_source=website&utm_medium=jobsuche_menu&utm_campaign=talents-connect",
-        },
-        {
-            "company": "Ferchau",
-            "url": "https://touch.ferchau.com/de/de?sortingType=actuality&sortingDirection=DESC",
-        }
+        "company": "Akkodis",
+        "search_url": "https://karriere.akkodis.com/search?query={keyword}"
+    },
+    {
+        "company": "Ferchau",
+        "search_url": "https://touch.ferchau.com/de/de?searchTerm={keyword}"
+    }
 ]
 
 # Load existing jobs (avoid duplicates)
@@ -88,7 +88,52 @@ def keyword_match(text):
 
     return matched
 
+def scrape_search_site(company, base_url, keyword):
 
+    jobs = []
+
+    url = base_url.replace("{keyword}", keyword)
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+
+        page.goto(url, timeout=60000)
+        page.wait_for_timeout(5000)
+
+        content = page.content()
+        browser.close()
+
+    soup = BeautifulSoup(content, "lxml")
+
+    # extract job cards (generic)
+    for a in soup.find_all("a"):
+
+        title = a.get_text(strip=True)
+        href = a.get("href")
+
+        if not title or not href:
+            continue
+
+        if href.startswith("/"):
+            base = "/".join(url.split("/")[:3])
+            full_url = base + href
+        else:
+            full_url = href
+
+        # IMPORTANT: ensure real job pages only
+        if "search" in full_url:
+            continue
+
+        jobs.append({
+            "company": company,
+            "title": title,
+            "url": full_url,
+            "matched_keywords": [keyword]
+        })
+
+    return jobs
+    
 def scrape_site(company, url):
 
     try:
@@ -172,7 +217,7 @@ def scrape_dynamic_site(company, url):
         if "search" in full_url:
             continue
 
-        matched = keyword_match(title)
+        # matched = keyword_match(title)
 
         if not matched:
             continue
@@ -199,8 +244,18 @@ for source in STATIC_SOURCES:
 
 # DYNAMIC (REAL POWER)
 
+KEYWORDS_TO_SEARCH = KEYWORDS  # reuse your existing list
+
 for source in DYNAMIC_SOURCES:
-    all_found_jobs += scrape_dynamic_site(source["company"], source["url"])
+    for keyword in KEYWORDS_TO_SEARCH:
+
+        jobs = scrape_search_site(
+            source["company"],
+            source["search_url"],
+            keyword
+        )
+
+        all_found_jobs += jobs
 
 print("Jobs found:", len(all_found_jobs))
 
